@@ -1,17 +1,24 @@
+from flask import Flask, render_template
 import datetime
 
-# mensagem de boas-vindas
-print("Bem-vindo(a) ao aplicativo de data e hora em Python!")
+app = Flask(__name__)
 
-# Obter a data e hora atual
-now = datetime.datetime.now()
+@app.route('/')
+def index():
+    # Obter a data e hora atual
+    now = datetime.datetime.now()
 
-# Apresentar o dia da semana e a data
-print("Hoje é", now.strftime("%A"), ", ", now.strftime("%d/%m/%Y"))
+    # Calcular quantos dias restam até o final do ano
+    end_of_year = datetime.datetime(now.year, 12, 31)
+    days_left = (end_of_year - now).days
 
-# Calcular quantos dias restam até o final do ano
-end_of_year = datetime.datetime(now.year, 12, 31)
-days_left = (end_of_year - now).days
+    # Renderizar o template HTML com os dados
+    return render_template('index.html',
+                           weekday=now.strftime("%A"),
+                           date=now.strftime("%d/%m/%Y"),
+                           days_passed=now.timetuple().tm_yday,
+                           days_left=days_left)
 
-# Apresentar a quantidade de dias restantes e já percorridos no ano
-print("Já passaram", now.timetuple().tm_yday, "dias neste ano e restam", days_left, "dias até o final do ano.")
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+
