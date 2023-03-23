@@ -1,4 +1,4 @@
-# data-hora-diasano-py
+# data-hora-dia decorridos do ano
 Laboratório - Cloud Computing - Openshift
 
 Prática da Pós-Graduação em Cloud Computing (InfNet) utilizando OpenShift:
