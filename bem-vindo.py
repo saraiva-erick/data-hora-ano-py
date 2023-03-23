@@ -1,5 +1,7 @@
 import datetime
 
+# Pré-requisitos: Phyton
+
 # mensagem de boas-vindas
 print("Bem-vindo(a) ao aplicativo de data e hora em Python!")
 
