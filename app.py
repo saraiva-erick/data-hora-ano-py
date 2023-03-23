@@ -1,7 +1,8 @@
-from flask import Flask, render_template
-import datetime
-
+import os
+from flask import Flask
 app = Flask(__name__)
+
+import datetime
 
 @app.route('/')
 def main():
