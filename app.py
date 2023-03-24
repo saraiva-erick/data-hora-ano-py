@@ -14,8 +14,8 @@ def main():
     days_left = (end_of_year - now).days
 
     # Retornar os dados
-    return ('<h1>Bem-vindo(a) ao programa de data e hora em Flask/Python (InfNet | Erick Saraiva)!</h1>')
-    return ('<p> Hoje é: ' + now.strftime("%A") '</p>')
+    return ('<h1>Bem-vindo(a) ao programa de data e hora em Flask/Python (InfNet | Erick Saraiva)!</h1>',
+            '<p> Hoje é: 24/03/2023</p>')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
